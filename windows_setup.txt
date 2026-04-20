@@ -1,0 +1,40 @@
+1. Install Java JDK (17 or above)
+2. Install Apache Tomcat 10
+3. Install MySQL Server
+
+Steps:
+
+- Download JDK: https://adoptium.net/
+- Download Tomcat: https://tomcat.apache.org/
+- Download MySQL: https://dev.mysql.com/downloads/mysql/
+
+Setup:
+
+1. Set JAVA_HOME environment variable
+2. Add %JAVA_HOME%\bin to PATH
+
+Tomcat:
+- Extract Tomcat
+- Go to bin folder
+- Run: startup.bat
+
+MySQL:
+- Open MySQL Command Line Client
+- Login as root
+
+Run database:
+mysql -u root -p < db.sql
+
+Project setup:
+- Copy project folder to:
+  apache-tomcat/webapps/PR5
+
+Compile:
+- Open Command Prompt in PR5 folder
+
+javac -cp "WEB-INF/lib/mysql-connector-j-8.0.33.jar;C:\apache-tomcat\lib\servlet-api.jar" servlet.java
+
+move servlet.class WEB-INF\classes\
+
+Run:
+http://localhost:8080/PR5/servlet
